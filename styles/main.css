@@ -1,0 +1,88 @@
+@charset 'utf-8';
+.container {
+    width: 990px !important;
+}
+.wrap {
+    margin-top: 20px;
+}
+.m-aside {
+    width: 20%;
+    margin-top: 50px;
+}
+.m-aside .glyphicon {
+    color: #269abc;
+}
+.m-aside .nav .active a {
+    color: #333;
+}
+.m-aside .nav a:hover {
+    color: #428bca;
+}
+/* end 边栏 */
+.m-page-hd .title {
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 10px;
+}
+.m-page-hd .control {
+    margin-top: 10px;
+}
+.m-page-hd .control li {
+    display: inline-block;
+    padding: 0 5px;
+}
+.m-page-hd .control .glyphicon {
+    font-size: 16px;
+}
+.m-page-hd .search {
+    margin-top: 5px;
+}
+.m-page-hd .search input {
+    height: 30px;
+}
+.m-page-hd .search .input-group-btn button{
+    height: 30px;
+    padding: 0 10px;
+}
+/* end 控制栏 */
+.m-page-list {
+    margin-top: 20px;
+}
+.m-page-list .hd {
+    height: 35px;
+}
+.m-page-list .file-list li {
+    padding: 5px 0;
+    margin-right: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.m-page-list .file-list li.active {
+    background: #e3f2ff;
+}
+.m-page-list .file-list li:hover {
+    background: #f5f5f5;
+}
+.m-page-list .file-list li.active:hover {
+    background: #e3f2ff;
+}
+.m-page-list .file-list .glyphicon {
+    padding-right: 25px;
+    font-size: 18px;
+    color: #333;
+}
+.m-page-list .hd .file-ctrl {
+    display: none;
+    padding-bottom: 15px;
+    height: 35px;
+}
+.m-page-list .hd .file-ctrl .name {
+    padding-right: 20px;
+}
+.m-page-list .hd .file-ctrl a {
+    text-decoration: none;
+    padding-right: 15px;
+}
+/* end 文件列表 */
+.modal-title {
+    font-family: Tohoma, Arail, "微软雅黑";
+}

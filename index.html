@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>网盘</title>
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <div class="container wrap">
+        <div class="row">
+            <div class="col-xs-2 m-aside">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="#"><span class="glyphicon glyphicon-list-alt"></span> 文件</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-picture"></span> 照片</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-share-alt"></span> 共享</a>
+                    </li>
+                    <li><a href="#"><span class="glyphicon glyphicon-link"></span> 链接</a></li>
+                </ul>
+            </div>
+            <!-- 侧边栏导航 end -->
+            <div class="col-xs-9 m-page">
+                <div class="row m-page-hd">
+                    <div class="col-xs-2"><h1 class="title">Tangbox</h1></div>
+                    <div class="col-xs-6 col-xs-offset-4">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <ul class="list-unstyled control">
+                                    <li data-toggle="modal" data-target="#upload">
+                                        <a href="#" title="上传文件"><span class="glyphicon glyphicon-cloud-upload"></span></a>
+                                    </li>
+                                    <li data-toggle="modal" data-target="#addFolder">
+                                        <a href="#" title="新建文件夹"><span class="glyphicon glyphicon-plus-sign"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="共享文件夹"><span class="glyphicon  glyphicon-share"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="显示已删除文件"><span class="glyphicon glyphicon-trash"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="search input-group">
+                                    <input type="text" class="form-control" placeholder="搜索">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 主体顶部菜单栏 end -->
+                <div class="m-page-list">
+                    <div class="hd">
+                        <div class="row info" id="fileInfo">
+                            <span class="col-xs-6 text-muted">名称</span>
+                            <span class="col-xs-3 text-muted">类型</span>
+                            <span class="col-xs-3 text-muted">最后修改时间</span>
+                        </div>
+                        <!-- 文件信息头 -->
+                        <div class="row file-ctrl" id="fileCtrl">
+                            <span class="name"></span>
+                            <a href="#" id="download"><span class="glyphicon glyphicon-save"></span> 下载</a>
+                            <a href="#"><span class="glyphicon glyphicon-remove-circle"></span> 删除</a>
+                            <a href="#"><span class="glyphicon glyphicon-pencil"></span> 重命名</a>
+                            <a href="#"><span class="glyphicon glyphicon-transfer"></span> 移动到</a>
+                            <a href="#"><span class="glyphicon glyphicon-circle-arrow-right"></span> 复制到</a>
+                        </div>
+                        <!-- 文件操作控制 默认隐藏 -->
+                    </div>
+                    <!-- 文件列表控制栏 end -->
+                    <ul class="row list-unstyled file-list" id="fileList">
+                        <li class="row">
+                            <div class="col-xs-6">
+                                <span class="glyphicon glyphicon-file"></span>
+                                <a href="#" class="file-name" data-downlink="http://xxx.www.com/lazyload.js">lazyload.js</a>
+                            </div>
+                            <div class="col-xs-3">代码/文档</div>
+                            <div class="col-xs-3">2014/3/23 14:00</div>
+                        </li>
+                        <li class="row">
+                            <div class="col-xs-6">
+                                <span class="glyphicon glyphicon-folder-close"></span>
+                                <a href="#" class="file-name" data-downlink="http://xxx.www.com/filename">test</a>
+                            </div>
+                            <div class="col-xs-3">文件夹</div>
+                            <div class="col-xs-3">2014/3/23 14:00</div>
+                        </li>
+                        <li class="row">
+                            <div class="col-xs-6">
+                                <span class="glyphicon glyphicon-picture"></span>
+                                <a href="#" class="file-name" data-downlink="http://xxx.www.com/test.jpg">test.jpg</a>
+                            </div>
+                            <div class="col-xs-3">图片</div>
+                            <div class="col-xs-3">2014/3/23</div>
+                        </li>
+                        <li class="row">
+                            <div class="col-xs-6">
+                                <span class="glyphicon glyphicon-facetime-video"></span>
+                                <a href="#" class="file-name" data-downlink="http://xxx.www.com/test.mp4">test.mp4</a>
+                            </div>
+                            <div class="col-xs-3">视频</div>
+                            <div class="col-xs-3">2014/3/23</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 主体文件列表 end -->
+            </div>
+        </div>
+
+        <!-- start 模态对话框 -->
+
+        <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">上传文件</h4>
+              </div>
+              <div class="modal-body">
+                请上传文件
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default">选择文件</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- 模态框1 end for 上传文件 -->
+
+        <div class="modal fade" id="addFolder" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">新建文件夹</h4>
+              </div>
+              <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">请输入文件夹名：</label>
+                        <input type="text" class="form-control">
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default">确定</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div>
+        <!-- 模态框2 end for 新建文件夹 -->
+
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/bootstrap.min.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
